@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Momirski.Boxing — Besplatan priručnik</title>
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
     .foot{padding:4px 24px 24px; text-align:center; font-size:12px; color:#475569}
     .fine{font-size:12px; opacity:.7}
 
-    /* === Brevo embed overrides (stil po Momirskom) === */
+    /* === Brevo embed overrides (Momirski stil) === */
     .sib-form, .sib-form * { font-family: 'Exo 2', system-ui, sans-serif !important; }
     .sib-form h1, .sib-form h2, .sib-form h3, .sib-form .title, .sib-form label, .sib-form .sib-form-block p:first-child {
       font-family: 'Russo One', sans-serif !important;
@@ -61,7 +61,7 @@
     .sib-form .sib-form-message-panel.error { background:#fef2f2 !important; color:#991b1b !important; border:1px solid #fecaca !important; border-radius:12px !important; }
   </style>
 
-  <!-- Brevo CSS (obavezno za funkcionalnost) -->
+  <!-- Brevo CSS (obavezno) -->
   <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 </head>
 <body>
@@ -74,7 +74,7 @@
       </header>
 
       <section class="panel" aria-label="Forma za preuzimanje priručnika">
-        <!-- === Tvoj Brevo HTML embed (onaj što si poslao) === -->
+        <!-- === TVOJ BREVO HTML EMBED (kopija) === -->
         <div class="sib-form" style="text-align: center; background-color: #e4ebef;">
           <div id="sib-form-container" class="sib-form-container">
             <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:Helvetica, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
@@ -130,7 +130,7 @@
           </div>
         </div>
         <p class="fine" style="margin-top:12px">Slanjem mejla saglašavaš se da te kontaktiram u vezi priručnika i budućih trening novosti. Možeš se odjaviti kad god.</p>
-        <!-- === END embed === -->
+        <!-- === KRAJ EMBED-a === -->
       </section>
 
       <div class="foot">© <span id="y"></span> Momirski.Boxing • Novi Sad</div>
@@ -138,23 +138,24 @@
   </div>
 
   <script>
+    // godina u footeru
     document.getElementById('y').textContent = new Date().getFullYear();
-    window.LOCALE = 'sr';
-  <script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-  window.LOCALE = 'sr';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Molim te proveri da li si poslao ispravan mejl.";
-  window.REQUIRED_ERROR_MESSAGE = "Upiši mejl i udri „Šalji“.";
-  window.GENERIC_INVALID_MESSAGE = "Molim te proveri da li si poslao ispravan mejl.";
-  window.translation = { common: {
-    selectedList: '{quantity} list selected',
-    selectedLists: '{quantity} lists selected',
-    selectedOption: '{quantity} selected',
-    selectedOptions: '{quantity} selected'
-  }};
-  var AUTOHIDE = Boolean(0);
-</script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
+    // Brevo config – omogućava da success/error poruke ostanu NA STRANICI (bez belog ekrana)
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'sr';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Molim te proveri da li si poslao ispravan mejl.";
+    window.REQUIRED_ERROR_MESSAGE = "Upiši mejl i udri „Šalji“.";
+    window.GENERIC_INVALID_MESSAGE = "Molim te proveri da li si poslao ispravan mejl.";
+    window.translation = { common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected',
+      selectedOption: '{quantity} selected',
+      selectedOptions: '{quantity} selected'
+    }};
+    var AUTOHIDE = Boolean(0); // ne skriva success poruku automatski
+  </script>
+  <!-- Brevo JS mora da bude posle config-a -->
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
