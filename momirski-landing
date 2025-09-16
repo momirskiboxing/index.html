@@ -140,7 +140,21 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
     window.LOCALE = 'sr';
-  </script>
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  <script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'sr';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Molim te proveri da li si poslao ispravan mejl.";
+  window.REQUIRED_ERROR_MESSAGE = "Upiši mejl i udri „Šalji“.";
+  window.GENERIC_INVALID_MESSAGE = "Molim te proveri da li si poslao ispravan mejl.";
+  window.translation = { common: {
+    selectedList: '{quantity} list selected',
+    selectedLists: '{quantity} lists selected',
+    selectedOption: '{quantity} selected',
+    selectedOptions: '{quantity} selected'
+  }};
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+
 </body>
 </html>
